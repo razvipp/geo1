@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramura Industriei - Proiect Geografie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #005B96;
+            --secondary: #00C897;
+            --dark: #333333;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 91, 150, 0.8), rgba(0, 91, 150, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in;
+            color: white;
+        }
+
+        header p {
+            font-size: 2.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .feature-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 0;
+            padding: 0 15px;
+            text-align: left;
+        }
+
+        .feature-details.active {
+            max-height: 500px;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .feature-details h4 {
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .feature-details ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .feature-details li {
+            margin-bottom: 8px;
+        }
+
+        :root {
+            --primary: #005B96;
+            --secondary: #00C897;
+            --dark: #333333;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 91, 150, 0.8), rgba(0, 91, 150, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .timeline-content h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-content h3::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .timeline-content.active h3::after {
+            content: '-';
+        }
+
+        .timeline-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 0;
+        }
+
+        .timeline-content.active .timeline-details {
+            max-height: 500px;
+            margin-top: 15px;
+        }
+
+        .timeline-details ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .timeline-details li {
+            margin-bottom: 8px;
+        }
+
+        /* Sectors Section */
+        .sectors {
+            background-color: #f1f1f1;
+        }
+
+        .sector-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .sector-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .sector-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .sector-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .sector-card:hover .sector-img img {
+            transform: scale(1.1);
+        }
+
+        .sector-info {
+            padding: 20px;
+        }
+
+        .sector-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .sector-info p {
+            margin-bottom: 15px;
+        }
+
+        .sector-stats {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f8f9fa;
+            margin: 0 -20px -20px;
+            padding: 0 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .sector-stats.active {
+            max-height: 500px;
+            padding: 15px 20px 20px;
+        }
+
+        .sector-stats h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .sector-stats ul {
+            padding-left: 20px;
+        }
+
+        .sector-stats li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Statistics Section */
+        .stats {
+            background-color: white;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-weight: bold;
+        }
+
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .source {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: #f1f1f1;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 91, 150, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            background-color: white;
+        }
+
+        .facts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fact-card {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fact-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .fact-card h3 {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fact-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+
+                /* Lightbox Styles */
+                .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .lightbox-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-lightbox:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        /* Animation for lightbox */
+        @keyframes zoomIn {
+            from {transform: scale(0.5); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .lightbox-content {
+            animation: zoomIn 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .left::before, .right::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left, .right {
+                left: 0;
+            }
+        }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Video Section */
+.video-section {
+    background-color: #f1f1f1;
+    padding: 80px 50px;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card h3 {
+    padding: 20px 20px 10px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.video-card p {
+    padding: 0 20px 20px;
+    text-align: center;
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Industria-Motorul economiei moderne</div>
+        <ul class="nav-links">
+            <li><a href="#features">Caracteristici</a></li>
+            <li><a href="#timeline">Evoluție</a></li>
+            <li><a href="#sectors">Ramuri Industriale</a></li>
+            <li><a href="#stats">Statistici</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#videos">Video</a></li>
+            <li><a href="#facts">Curiozități</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Industria - Motorul Economiei Moderne</h1>
+        <p>Explorează diversitatea, evoluția și impactul ramurilor industriale care modelează lumea contemporană</p>
+        <a href="#features" class="btn">Explorează</a>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Caracteristici Principale</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3>Diversitate Sectorială</h3>
+                <p>Industria cuprinde multiple ramuri, de la extractivă la prelucrătoare, fiecare cu procese și tehnologii specifice.</p>
+                <button class="btn toggle-details" style="margin-top: 15px;">Detalii</button>
+                <div class="feature-details">
+                    <h4>Exemple de ramuri industriale:</h4>
+                    <ul>
+                        <li>Industria extractivă (minerit, petrol, gaze naturale)</li>
+                        <li>Industria prelucrătoare (metalurgică, chimică, alimentară)</li>
+                        <li>Industria construcțiilor de mașini</li>
+                        <li>Industria ușoară (textilă, încălțăminte)</li>
+                        <li>Industria energetică</li>
+                    </ul>
+                    <p>Fiecare ramură industrială are procese de producție specifice și contribuie în mod unic la economia națională.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Impact Global</h3>
+                <p>Ramurile industriale sunt interconectate la nivel mondial, influențând economiile naționale și comerțul internațional.</p>
+                <button class="btn toggle-details" style="margin-top: 15px;">Detalii</button>
+                <div class="feature-details">
+                    <h4>Exemple de impact global:</h4>
+                    <ul>
+                        <li>Lanțuri de aprovizionare globale</li>
+                        <li>Standardizarea proceselor de producție</li>
+                        <li>Transfer de tehnologii între țări</li>
+                        <li>Interdependența economică</li>
+                    </ul>
+                    <p>Industria modernă creează o rețea complexă de interdependențe economice la nivel mondial.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Inovație Tehnică</h3>
+                <p>Fiecare ramură industrială evoluează constant prin adoptarea de tehnologii avansate și procese eficiente.</p>
+                <button class="btn toggle-details" style="margin-top: 15px;">Detalii</button>
+                <div class="feature-details">
+                    <h4>Exemple de inovații:</h4>
+                    <ul>
+                        <li>Automatizare și robotizare</li>
+                        <li>Inteligenta artificială în procesele industriale</li>
+                        <li>Tehnologii verzi și sustenabile</li>
+                        <li>Industria 4.0 și IoT</li>
+                    </ul>
+                    <p>Inovația tehnologică este motorul creșterii economice și al competitivității în sectorul industrial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+      
+
+    <section id="timeline" class="timeline-section">
+        <h2 class="section-title">Evoluție Istorică</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Sec. XVIII - Revoluția Industrială</h3>
+                    <p>Apariția manufacturilor și a sistemelor de producție în masă, cu focalizare pe industria textilă și siderurgică.</p>
+                    <div class="timeline-details">
+                        <h4>Principalele inovații:</h4>
+                        <ul>
+                            <li>Mașina de filat "Spinning Jenny" (1764)</li>
+                            <li>Motorul cu abur (James Watt, 1769)</li>
+                            <li>Primele fabrici textile</li>
+                            <li>Dezvoltarea căilor ferate</li>
+                        </ul>
+                        <h4>Impact social:</h4>
+                        <p>Migrația masivă spre orașe, apariția proletariatului industrial, schimbări profunde în structura socială.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Sec. XIX - Extinderea Industrială</h3>
+                    <p>Dezvoltarea căilor ferate, industria chimică și diversificarea ramurilor industriale.</p>
+                    <div class="timeline-details">
+                        <h4>Industrii cheie:</h4>
+                        <ul>
+                            <li>Industria siderurgică (cuptorul Bessemer, 1856)</li>
+                            <li>Industria chimică (soda, acid sulfuric)</li>
+                            <li>Industria petrolieră (rafinării, 1859)</li>
+                            <li>Industria electrică (lampă cu incandescență, 1879)</li>
+                        </ul>
+                        <h4>Schimbări economice:</h4>
+                        <p>Apariția capitalismului industrial, expansiunea piețelor globale, creșterea productivității.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3>Sec. XX - Producția de Masă</h3>
+                    <p>Standardizarea proceselor, linii de asamblare și apariția unor noi ramuri precum industria auto și aeronautică.</p>
+                    <div class="timeline-details">
+                        <h4>Revoluții industriale:</h4>
+                        <ul>
+                            <li>Linia de asamblare (Henry Ford, 1913)</li>
+                            <li>Industria auto în masă</li>
+                            <li>Industria aeronautică</li>
+                            <li>Industria electronică</li>
+                        </ul>
+                        <h4>Perioade importante:</h4>
+                        <p>Perioada interbelică - dezvoltarea industriei grele<br>
+                        După al Doilea Război Mondial - reconstrucția și expansiunea<br>
+                        Anii 1970-1980 - automatizarea și robotizarea</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3>Sec. XXI - Digitalizarea</h3>
+                    <p>Industria 4.0 cu automatizare avansată, IoT și sisteme de producție inteligente.</p>
+                    <div class="timeline-details">
+                        <h4>Tendințe actuale:</h4>
+                        <ul>
+                            <li>Industria 4.0 (IoT, Big Data, AI)</li>
+                            <li>Robotică avansată și automatizare</li>
+                            <li>Producție aditivă (imprimante 3D industriale)</li>
+                            <li>Sustenabilitate și energie verde</li>
+                        </ul>
+                        <h4>Provocări:</h4>
+                        <p>Globalizarea producției, schimbări climatice, necesitatea recalificării forței de muncă, securitatea cibernetică.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section id="sectors" class="sectors">
+        <h2 class="section-title">Principalele Ramuri Industriale</h2>
+        <div class="sector-cards">
+            <div class="sector-card">
+                <div class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1600684249816-38cdfcf95c17?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Industria grea">
+                </div>
+                <div class="sector-info">
+                    <h3>Industria Grea</h3>
+                    <p>Include siderurgie, construcții navale, echipamente industriale mari. Reprezintă baza pentru alte ramuri industriale.</p>
+                    <button class="btn toggle-stats">Vezi Statistici</button>
+                    <div class="sector-stats">
+                        <h4>Statistici Industrie Grea:</h4>
+                        <ul>
+                            <li>Reprezintă 15% din producția industrială globală</li>
+                            <li>China produce 50% din oțelul mondial</li>
+                            <li>Industria grea este responsabilă pentru 22% din emisiile globale de CO₂</li>
+                            <li>Angajează peste 100 de milioane de lucrători la nivel global</li>
+                            <li>Creștere anuală medie de 3.5% în ultimul deceniu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Industria ușoară">
+                </div>
+                <div class="sector-info">
+                    <h3>Industria Ușoară</h3>
+                    <p>Producția de bunuri de larg consum: textile, încălțăminte, mobilă, articole casnice.</p>
+                    <button class="btn toggle-stats">Vezi Statistici</button>
+                    <div class="sector-stats">
+                        <h4>Statistici Industrie Ușoară:</h4>
+                        <ul>
+                            <li>Valoarea globală estimată: 2.5 trilioane USD</li>
+                            <li>Responsabilă pentru 8% din exporturile mondiale</li>
+                            <li>Asia deține 65% din producția globală de textile</li>
+                            <li>Peste 300 milioane de oameni angajați în sector</li>
+                            <li>Industria textilă generează 1.2 trilioane USD anual</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1611864581049-aca018410b97?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Industria alimentară">
+                </div>
+                <div class="sector-info">
+                    <h3>Industria Alimentară</h3>
+                    <p>Prelucrarea materiilor prime agricole în produse alimentare pentru consumul populației.</p>
+                    <button class="btn toggle-stats">Vezi Statistici</button>
+                    <div class="sector-stats">
+                        <h4>Statistici Industrie Alimentară:</h4>
+                        <ul>
+                            <li>Valoare globală: 8.7 trilioane USD</li>
+                            <li>Reprezintă 10% din PIB-ul mondial</li>
+                            <li>Angajează 1.5 miliarde de persoane</li>
+                            <li>Produce 4 miliarde de tone de alimente anual</li>
+                            <li>Creștere anuală de 4.3% în ultimii 5 ani</li>
+                            <li>40% din producție este procesată industrial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sector-card">
+                <div class="sector-img">
+                    <img src="https://images.unsplash.com/photo-1608037222022-62649819f8aa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Industria chimică">
+                </div>
+                <div class="sector-info">
+                    <h3>Industria Chimică</h3>
+                    <p>Producția de substanțe chimice, farmaceutice, materiale plastice și produse petroliere rafinate.</p>
+                    <button class="btn toggle-stats">Vezi Statistici</button>
+                    <div class="sector-stats">
+                        <h4>Statistici Industrie Chimică:</h4>
+                        <ul>
+                            <li>Valoare globală: 5.7 trilioane USD</li>
+                            <li>China, SUA și Europa reprezintă 60% din producție</li>
+                            <li>Peste 15 milioane de angajați directi</li>
+                            <li>Industria farmaceutică: 1.27 trilioane USD</li>
+                            <li>Produce peste 70.000 de produse diferite</li>
+                            <li>Investește 5% din venituri în cercetare și dezvoltare</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats">
+        <h2 class="section-title">Statistici și Tendințe</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>28%</h3>
+                <p>Ponderea industriei în PIB-ul global</p>
+            </div>
+            <div class="stat-card">
+                <h3>1.2 miliarde</h3>
+                <p>Locuri de muncă în sectorul industrial</p>
+            </div>
+            <div class="stat-card">
+                <h3>75%</h3>
+                <p>Din comerțul mondial implică produse industriale</p>
+            </div>
+        </div>
+        
+       
+
+    </section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+    <h2 class="section-title">Galerie Foto</h2>
+    <div class="gallery-container">
+      <!-- 1. Uzine Industriale Moderne -->
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg" alt="Uzină industrială modernă cu structuri metalice și utilaje">
+        <div class="gallery-overlay">
+          <h3>Uzine Industriale Moderne</h3>
+        </div>
+      </div>
+  
+      <!-- 2. Procese de Producție -->
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/256301/pexels-photo-256301.jpeg" alt="Linie de producție automatizată cu brațe robotice">
+        <div class="gallery-overlay">
+          <h3>Procese de Producție</h3>
+        </div>
+      </div>
+  
+      <!-- 3. Automatizare Industrială -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1701328778019-e95dedbf5346?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Roboți industriali în fabrică">
+        <div class="gallery-overlay">
+          <h3>Automatizare Industrială</h3>
+        </div>
+      </div>
+  
+      <!-- 4. Industria Energetică -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1629168439208-dab1ee6f162e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Turbine eoliene în câmp">
+        <div class="gallery-overlay">
+          <h3>Industria Energetică</h3>
+        </div>
+      </div>
+  
+      <!-- 5. Industria Siderurgică -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1727504172743-08f14448fab8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Oțel topit și scântei în fabrică metalurgică">
+        <div class="gallery-overlay">
+          <h3>Industria Siderurgică</h3>
+        </div>
+      </div>
+  
+      <!-- 6. Rafinărie de Petrol -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1648369000096-109763c11e8e?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rafinărie petrolieră cu conducte complexe">
+        <div class="gallery-overlay">
+          <h3>Rafinărie de Petrol</h3>
+        </div>
+      </div>
+  
+      <!-- 7. Industria Textilă -->
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" alt="Mașini de țesut textile">
+        <div class="gallery-overlay">
+          <h3>Industria Textilă</h3>
+        </div>
+      </div>
+  
+      <!-- 8. Producție Alimentară -->
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/918581/pexels-photo-918581.jpeg" alt="Linie de ambalare alimentară">
+        <div class="gallery-overlay">
+          <h3>Producție Alimentară</h3>
+        </div>
+      </div>
+  
+      <!-- 9. Industria Chimică -->
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg" alt="Reactori chimici industriali">
+        <div class="gallery-overlay">
+          <h3>Industria Chimică</h3>
+        </div>
+      </div>
+  
+      <!-- 10. Fabrica de Mașini -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Linie de asamblare auto">
+        <div class="gallery-overlay">
+          <h3>Fabrica de Mașini</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+    <!-- Video Section -->
+    <section id="videos" class="video-section">
+        <h2 class="section-title">Video Documentare</h2>
+        <div class="video-container">
+            <div class="video-card">
+                <h3>Care sunt ramurile industriei. industria Romaniei.</h3>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/h5woclMhlm8?si=dM4cbzsGDpXtICls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>In acest videoclip veți descoperi care sunt ramurile industriei, materii prime folosite si produse industriale rezultate. Veti descoperi sursele de energie si cum se numesc centralele electrice care le folosesc, din ce se obtine otelul, cimentul si alte materiale de constructii, ce materii prime foloseste induatria chimica saau industria alimentară.</p>
+            </div>
+            <div class="video-card">
+                <h3>Rolul diviziei de petrochimie a Rompetrol în industria locală</h3>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RUGaztpPPGA?si=CFnCdiQEzNUKSRZd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Petrochimia de la Petromidia asigură peste jumătate din consumul intern de produse petrochimice, fiind unicul producător local de polimeri.</p>
+            </div>
+            <div class="video-card">
+                <h3>Industria României - Introducere - Lecție de geografie - Geografia României</h3>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bEGkMCCbD8M?si=fDax2vzWFzSjKWoC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>O lecție mixtă(recapitulare-învățare) cu tema : Industria României - Introducere.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+      
+    <!-- Fun Facts Section -->
+    <section id="facts" class="fun-facts">
+        <h2 class="section-title">Curiozități</h2>
+        <div class="facts-container">
+            <div class="fact-card">
+                <h3>Prima Fabrică</h3>
+                <p>Lombardul John Lombe a construit în 1718 prima fabrică modernă din lume la Derby, Anglia, pentru producția de mătase.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Cea Mai Mare</h3>
+                <p>Industria alimentară este cea mai mare ramură industrială la nivel global, reprezentând aproximativ 10% din PIB-ul mondial.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Revoluția Industrială 4.0</h3>
+                <p>Industria 4.0 este estimată să adauge peste 3,7 trilioane de dolari la economia globală până în 2025.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Primul Robot Industrial</h3>
+                <p>Primul robot industrial, Unimate, a fost instalat la General Motors în 1961 pentru manipularea pieselor metalice fierbinți.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Auto</h3>
+                <p>Peste 90 de milioane de automobile sunt produse anual în întreaga lume, majoritatea în China, SUA și Japonia.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Textilă</h3>
+                <p>Pentru a produce un singur tricou de bumbac sunt necesari 2.700 de litri de apă - cantitatea pe care o persoană o bea în 2,5 ani.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Petrolieră</h3>
+                <p>Zăcămintele de petrol descoperite reprezintă doar 40% din resursele totale estimate, restul fiind încă nedescoperite.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Electronică</h3>
+                <p>Un smartphone modern are o putere de calcul de 1 milion de ori mai mare decât computerul care a condus Apollo 11 pe Lună.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Farmaceuthică</h3>
+                <p>Dezvoltarea unui nou medicament durează în medie 12 ani și costă peste 2,5 miliarde de dolari.</p>
+            </div>
+            <div class="fact-card">
+                <h3>Industria Jocurilor Video</h3>
+                <p>Cloud gaming (ex: Xbox Cloud) necesită centre de date care consumă 5-10 ori mai multă energie decât consolele tradiționale.
+
+                    Piața globală de jocuri va depăși 300 de miliarde de dolari până în 2026.</p>
+            </div>
+        </div>
+    </section>
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" class="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Ramura Industriei - Proiect Geografie</h2>
+            <ul class="footer-links">
+                <li><a href="#features">Caracteristici</a></li>
+                <li><a href="#timeline">Evoluție</a></li>
+                <li><a href="#sectors">Ramuri</a></li>
+                <li><a href="#stats">Statistici</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#facts">Curiozități</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Proiect Geografie. Toate drept
+
+  
+
+    <script>
+        // Accordion functionality for feature details
+        document.querySelectorAll('.toggle-details').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const details = this.nextElementSibling;
+                const isOpening = !details.classList.contains('active');
+                
+                // Close all other open feature details if opening a new one
+                if (isOpening) {
+                    document.querySelectorAll('.feature-details').forEach(otherDetails => {
+                        if (otherDetails !== details && otherDetails.classList.contains('active')) {
+                            otherDetails.classList.remove('active');
+                            otherDetails.previousElementSibling.textContent = 'Detalii';
+                        }
+                    });
+                }
+                
+                details.classList.toggle('active');
+                this.textContent = details.classList.contains('active') ? 'Ascunde' : 'Detalii';
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector('.nav-links').classList.remove('active');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+                // Lightbox functionality
+                function openLightbox(imgElement) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-image');
+            
+            lightbox.style.display = "block";
+            lightboxImg.src = imgElement.src;
+            lightboxImg.alt = imgElement.alt;
+            
+            // Disable scrolling when lightbox is open
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = "none";
+            
+            // Enable scrolling again
+            document.body.style.overflow = "auto";
+        }
+
+        // Close lightbox when clicking outside the image
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+
+        // Close lightbox with ESC key
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                closeLightbox();
+            }
+        };
+
+        // Toggle functionality for timeline and sectors (existing code)
+        document.querySelectorAll('.timeline-content').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.toggle-stats').forEach(button => {
+            button.addEventListener('click', function() {
+                const stats = this.nextElementSibling;
+                stats.classList.toggle('active');
+                this.textContent = stats.classList.contains('active') ? 'Ascunde Statistici' : 'Vezi Statistici';
+            });
+        });
+
+              
+               
+
+        // Mobile menu toggle (existing code)
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+                    // Mobile Menu Toggle
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navLinks = document.querySelector('.nav-links');
+            
+                    menuToggle.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+            
+                    // Smooth Scrolling for Navigation
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            
+                            navLinks.classList.remove('active');
+                            
+                            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        });
+                    });
+            
+                    // Chart for Industry Sectors
+                    const ctx = document.getElementById('industryChart').getContext('2d');
+                    const industryChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Industria Grea', 'Industria Ușoară', 'Industria Alimentară', 'Industria Chimică', 'Altele'],
+                            datasets: [{
+                                data: [25, 20, 18, 15, 22],
+                                backgroundColor: [
+                                    'rgba(0, 91, 150, 0.8)',
+                                    'rgba(0, 200, 151, 0.8)',
+                                    'rgba(243, 156, 18, 0.8)',
+                                    'rgba(231, 76, 60, 0.8)',
+                                    'rgba(149, 165, 166, 0.8)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                }
+                            }
+                        }
+                    });
+            
+                    // Timeline expand/collapse functionality
+                    const timelineItems = document.querySelectorAll('.timeline-content');
+                    
+                    timelineItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            this.classList.toggle('active');
+                            
+                            // Close other open items
+                            timelineItems.forEach(otherItem => {
+                                if (otherItem !== this && otherItem.classList.contains('active')) {
+                                    otherItem.classList.remove('active');
+                                }
+                            });
+                        });
+                    });
+            
+                    // Animation on Scroll
+                    const animateOnScroll = () => {
+                        const elements = document.querySelectorAll('.feature-card, .sector-card, .stat-card, .fact-card, .gallery-item');
+                        
+                        elements.forEach(element => {
+                            const elementPosition = element.getBoundingClientRect().top;
+                            const screenPosition = window.innerHeight / 1.3;
+                            
+                            if(elementPosition < screenPosition) {
+                                element.style.opacity = '1';
+                                element.style.transform = 'translateY(0)';
+                            }
+                        });
+                    };
+            
+                    // Set initial state for animation
+                    document.querySelectorAll('.feature-card, .sector-card, .stat-card, .fact-card, .gallery-item').forEach(element => {
+                        element.style.opacity = '0';
+                        element.style.transform = 'translateY(20px)';
+                        element.style.transition = 'all 0.6s ease';
+                    });
+            
+                    window.addEventListener('scroll', animateOnScroll);
+                    window.addEventListener('load', animateOnScroll);
+
+
+
+   
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages':['geochart'],
+  });
+
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Procent din industrie'],
+      ['United States', 25],
+      ['China', 30],
+      ['Germany', 15],
+      ['Japan', 10],
+      ['India', 8],
+      ['Brazil', 5],
+      ['Russia', 4],
+      ['France', 3],
+      ['United Kingdom', 3],
+      ['Canada', 2]
+    ]);
+
+    var options = {
+      colorAxis: {colors: ['#ffe082', '#ff8f00', '#bf360c']},
+      backgroundColor: '#e3f2fd',
+      datalessRegionColor: '#cfd8dc',
+      defaultColor: '#f5f5f5',
+      animation: {
+        duration: 1000,
+        easing: 'out',
+        startup: true
+      },
+      legend: {textStyle: {color: '#333', fontSize: 12}}
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('geo_chart_div'));
+    chart.draw(data, options);
+  }
+
+  // Redesenare la redimensionare
+  window.addEventListener('resize', drawRegionsMap);
+</script>
+</body>
+</html>
